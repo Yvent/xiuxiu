@@ -21,15 +21,15 @@ let progressBarWidth: CGFloat = 200
 
 extension UIButton: CAAnimationDelegate {
     
-   
     
-   func tapped()  {
-   
-        BtnFrame = self.frame
+    
+    func tapped()  {
         
         if animating {
             return
         }
+        
+        BtnFrame = self.frame
         
         self.backgroundColor = UIColor(colorLiteralRed: 0, green: 122/255.0, blue: 255/255.0, alpha: 1.0)
         
@@ -48,10 +48,10 @@ extension UIButton: CAAnimationDelegate {
         radiusAnimation.delegate = self
         
         self.layer.add(radiusAnimation, forKey: "cornerRadiusShrinkAnim")
-
+        
         
     }
-///代理方法
+    ///代理方法
     public func animationDidStart( _ anim: CAAnimation) {
         
         if anim == self.layer.animation(forKey: "cornerRadiusShrinkAnim") {
@@ -76,8 +76,6 @@ extension UIButton: CAAnimationDelegate {
                 animating = false
             })
         }
-        
-        
     }
     
     func progressBarAnimation() {
@@ -113,7 +111,7 @@ extension UIButton: CAAnimationDelegate {
         pathAnimation.setValue("progressBarAnimation", forKey: "animationName")
         
         progressLayer.add(pathAnimation, forKey: nil)
-  
+        
     }
     
     
@@ -157,11 +155,11 @@ extension UIButton: CAAnimationDelegate {
         let checkLayer = CAShapeLayer()
         
         let path = UIBezierPath()
-    
+        
         let rectInCircle = self.bounds.insetBy(dx: self.bounds.size.width*(1-1/sqrt(2.0))/2, dy: self.bounds.size.width*(1-1/sqrt(2.0))/2)
         
         path.move(to: CGPoint(x: rectInCircle.origin.x + rectInCircle.size.width/9, y: rectInCircle.origin.y + rectInCircle.size.height*2/3))
-       
+        
         path.addLine(to: CGPoint(x: rectInCircle.origin.x + rectInCircle.size.width/3, y: rectInCircle.origin.y + rectInCircle.size.height*9/10))
         
         path.addLine(to: CGPoint(x: rectInCircle.origin.x + rectInCircle.size.width*8/10, y: rectInCircle.origin.y + rectInCircle.size.height*2/10))
@@ -194,6 +192,14 @@ extension UIButton: CAAnimationDelegate {
         
         checkLayer.add(checkAnimation, forKey: nil)
         
+        
+    }
+    
+    func recovery()  {
+        
+        self.layer.sublayers?.removeAll()
+        
+        self.backgroundColor = UIColor(colorLiteralRed: 0, green: 122/255.0, blue: 255/255.0, alpha: 1.0)
         
     }
 }
