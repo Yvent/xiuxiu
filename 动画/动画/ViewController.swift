@@ -20,36 +20,28 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    
-    lazy var Btn: UIButton = {
-    let btn = UIButton()
-        btn.backgroundColor = UIColor(colorLiteralRed: 0, green: 122/255.0, blue: 255/255.0, alpha: 1.0)
-        btn.layer.cornerRadius = progressBarHeight
-        btn.layer.masksToBounds = true
-        return btn
-    }()
-
-    
-    func setupUI()  {
-        view.addSubview(Btn)
-        
-        Btn.frame = CGRect(x: 150, y: 50, width: progressBarHeight*2, height: progressBarHeight*2)
-        
-        
-        
-        Btn.addTarget(self, action: #selector(ViewController.doBtn), for: .touchUpInside)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         
     }
     
-    func doBtn() {
-        Btn.tapped()
+    let zad = ZTableView(cellStyle:.subtitle , identifier: "sss")
+    
+    func setupUI()  {
+       
+        view.addSubview(zad.ZtableView)
+        
+        zad.ZtableView.frame =  CGRect(x: 150, y: 50, width: 300, height: 400)
+        
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         
-        Btn.recovery()
+      
+        zad.ZdataSource = [[[.imageName:"photo_headappmusic",.detaliStr:"svswevre",.textStr:"cwrverve"],[.imageName:"photo_headappmusic",.detaliStr:"svswevre",.textStr:"cwrverve"],[.imageName:"photo_headappmusic",.detaliStr:"svswevre",.textStr:"cwrverve"],[.imageName:"photo_headappmusic",.detaliStr:"svswevre",.textStr:"cwrverve"],[.imageName:"photo_headappmusic",.detaliStr:"svswevre",.textStr:"cwrverve"]]]
+        zad.ZtableView.reloadData()
+        
     }
-    
 }
 

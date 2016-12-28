@@ -13,6 +13,7 @@
 		4291619C1E026E21000E4A86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4291619B1E026E21000E4A86 /* Assets.xcassets */; };
 		4291619F1E026E21000E4A86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4291619D1E026E21000E4A86 /* LaunchScreen.storyboard */; };
 		429161A71E02742E000E4A86 /* donghua.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429161A61E02742E000E4A86 /* donghua.swift */; };
+		42FB6F831E13B3D1001106E9 /* ZTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FB6F821E13B3D1001106E9 /* ZTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4291619E1E026E21000E4A86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		429161A01E026E21000E4A86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		429161A61E02742E000E4A86 /* donghua.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = donghua.swift; sourceTree = "<group>"; };
+		42FB6F821E13B3D1001106E9 /* ZTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,10 +39,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		425A02301E1378170032AB45 /* 工具 */ = {
+			isa = PBXGroup;
+			children = (
+				425A02311E1378490032AB45 /* tableview */,
+				429161931E026E21000E4A86 /* 动画 */,
+			);
+			name = "工具";
+			sourceTree = "<group>";
+		};
+		425A02311E1378490032AB45 /* tableview */ = {
+			isa = PBXGroup;
+			children = (
+				42FB6F821E13B3D1001106E9 /* ZTableView.swift */,
+			);
+			name = tableview;
+			sourceTree = "<group>";
+		};
 		429161881E026E21000E4A86 = {
 			isa = PBXGroup;
 			children = (
-				429161931E026E21000E4A86 /* 动画 */,
+				425A02301E1378170032AB45 /* 工具 */,
 				429161921E026E21000E4A86 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -140,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42FB6F831E13B3D1001106E9 /* ZTableView.swift in Sources */,
 				429161971E026E21000E4A86 /* ViewController.swift in Sources */,
 				429161951E026E21000E4A86 /* AppDelegate.swift in Sources */,
 				429161A71E02742E000E4A86 /* donghua.swift in Sources */,
@@ -304,6 +324,7 @@
 				429161A51E026E21000E4A86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
